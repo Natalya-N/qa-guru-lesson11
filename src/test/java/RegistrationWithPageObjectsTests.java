@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import utils.TestDataGenerator;
 
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static io.qameta.allure.Allure.step;
 
 @Tag("simple")
@@ -14,8 +15,10 @@ public class RegistrationWithPageObjectsTests extends TestBase {
     @Test
     void successfulRegistrationTest() {
         step("Open page and set data", () -> {
-            registrationPage.openPage()
-                    .setFirstName(testData.firstName)
+            registrationPage.openPage();
+            executeJavaScript("$('#fixedban').remove()");
+            executeJavaScript("$('footer').remove()");
+            registrationPage.setFirstName(testData.firstName)
                     .setLastName(testData.lastName)
                     .setEmail(testData.emailAddress)
                     .setGender(testData.gender)
@@ -50,8 +53,10 @@ public class RegistrationWithPageObjectsTests extends TestBase {
     @Test
     void successfulRegistrationMinimumValuesTest() {
         step("Open page and set data", () -> {
-            registrationPage.openPage()
-                    .setFirstName(testData.firstName)
+            registrationPage.openPage();
+            executeJavaScript("$('#fixedban').remove()");
+            executeJavaScript("$('footer').remove()");
+            registrationPage.setFirstName(testData.firstName)
                     .setLastName(testData.lastName)
                     .setEmail(testData.emailAddress)
                     .setGender(testData.gender)
