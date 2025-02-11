@@ -17,7 +17,7 @@ public class TestBase {
     }
 
     @AfterEach
-    static void addScreenshot() {
+    void addScreenshot() {
         Attach.screenshotAs("Last screenshot");
     }
 
