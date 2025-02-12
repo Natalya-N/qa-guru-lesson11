@@ -15,10 +15,8 @@ public class RegistrationWithPageObjectsTests extends TestBase {
     @Test
     void successfulRegistrationTest() {
         step("Open page and set data", () -> {
-            registrationPage.openPage();
-            executeJavaScript("$('#fixedban').remove()");
-            executeJavaScript("$('footer').remove()");
-            registrationPage.setFirstName(testData.firstName)
+            registrationPage.openPage()
+                    .setFirstName(testData.firstName)
                     .setLastName(testData.lastName)
                     .setEmail(testData.emailAddress)
                     .setGender(testData.gender)
@@ -53,10 +51,8 @@ public class RegistrationWithPageObjectsTests extends TestBase {
     @Test
     void successfulRegistrationMinimumValuesTest() {
         step("Open page and set data", () -> {
-            registrationPage.openPage();
-            executeJavaScript("$('#fixedban').remove()");
-            executeJavaScript("$('footer').remove()");
-            registrationPage.setFirstName(testData.firstName)
+            registrationPage.openPage()
+                    .setFirstName(testData.firstName)
                     .setLastName(testData.lastName)
                     .setEmail(testData.emailAddress)
                     .setGender(testData.gender)
