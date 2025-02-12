@@ -3,7 +3,6 @@ import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import utils.TestDataGenerator;
 
-import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static io.qameta.allure.Allure.step;
 
 @Tag("simple")
